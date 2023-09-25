@@ -3,7 +3,7 @@ require_once 'config.php';
 
 class Database extends Config {
     public function insert($fname, $lname, $email, $phone) {
-        $sql = "INSERT INTO users (first_name, last_name, email, phone) 
+        $sql = "INSERT INTO users (firstname, lastname, email, phone) 
                 VALUES (:fname, :lname, :email, :phone)";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
