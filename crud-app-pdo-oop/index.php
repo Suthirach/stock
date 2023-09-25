@@ -41,7 +41,7 @@
                                     <div class="invalid-feedback">Phone is Required</div>
                                 </div>
                                 <div class="mb-3">
-                                    <input type="submit"value="Add User" class="btn-primary btn-block btn-lg" id="   ">
+                                    <input type="submit"value="Add User" class="btn btn-primary btn-block btn-lg" id="add-user-btn">
                                 </div>
                             </div>
                         </form>
@@ -77,7 +77,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>First Name</th>
-                                <th>Last Nam</th>
+                                <th>Last Name</th>
                                 <th>E-mail</th>
                                 <th>Phone</th>
                                 <th>Action</th>
