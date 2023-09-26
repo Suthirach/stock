@@ -47,4 +47,39 @@
 
     }
 
+    if (isset($_GET['edit'])) {
+        $id = $_GET['id'];
+        $user = $db->readOne($id);
+        echo json_encode($user);
+    }
+
+    if (isset($_POST['update'])) {
+        $id = $util->testInput(($_POST['id']));
+        $fname = $util->testInput(($_POST['fname']));
+        $lname = $util->testInput(($_POST['lname']));
+        $email = $util->testInput(($_POST['email']));
+        $phone = $util->testInput(($_POST['phone']));
+
+        if ($db->update($id, $fname, $lname, $email, $phone)) {
+            echo $util->showMessage("Success", "User updated Successfully!");
+            exit;
+        } else {
+            echo $util->showMessage("Danger", "Something went wrong!");
+            exit;
+        }
+    }
+
+    if (isset($_GET['delete'])) { 
+        $id = $_GET['id'];
+        if ($db->delete($id)) {
+            echo $util->showMessage("Info", "User Deleted Successfully!");
+            exit;
+        } else {
+            echo $util->showMessage("Danger", "Something went wrong!");
+            exit;
+        }
+    }
+
+    
+
 ?>
