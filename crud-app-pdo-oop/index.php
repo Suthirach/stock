@@ -51,6 +51,45 @@
     </div>
 
     <!-- Add New User Model End -->
+    <!-- Edit New User Modal Start -->
+
+    <div class="modal fade" tabindex="-1" id="editUserModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit This User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <form id="edit-user-form" class="p-2" novalidate>
+                            <input type="hidden" name="id" id="id"> 
+                                <div class="col">
+                                    <input type="text"id="fname" name="fname"   class="form-control form-control-lg"  placeholder="Enter First Name" required>
+                                    <div class="invalid-feedback">First name is Required</div>
+                                </div>
+                                <div class="col">
+                                    <input type="text"id="lname" name="lname" id="lname" class="form-control form-control-lg" placeholder="Enter last Name" required>
+                                    <div class="invalid-feedback">Last name is Required</div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text"id="email" name="email"  class="form-control form-control-lg" placeholder="Enter E-mail" required>
+                                    <div class="invalid-feedback">E-mail is Required</div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text"id="phone" name="phone"  class="form-control form-control-lg" placeholder="Enter Phone" required>
+                                    <div class="invalid-feedback">Phone is Required</div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="submit"value="Edit User" class="btn btn-primary btn-block btn-lg" id="edit-user-btn">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit New User Model End -->
 
     <div class="container">
         <div class="row mt-4">
