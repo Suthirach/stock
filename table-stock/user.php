@@ -1,18 +1,13 @@
 <?php
     session_start();
     require_once 'config/db.php';
-    if (!isset($_SESSION['admin_login'])){
+    if (!isset($_SESSION['user_login'])){
         $_SESSION['error'] = 'กรุณาเข้าสู่ระบบ!';
         header('location: signin.php');
-        
+
     }
-    
-    
-
+    $stock = ""
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,14 +19,14 @@
 </head>
     <div class="container">
         <?php
-            if(isset($_SESSION['admin_login'])){
-                $admin_login = $_SESSION['admin_login'];
-                $stmt = $conn->query("SELECT * FROM users WHERE id = $admin_login");
+            if(isset($_SESSION['user_login'])){
+                $user_id = $_SESSION['user_login'];
+                $stmt = $conn->query("SELECT * FROM users WHERE id = $user_id");
                 $stmt->execute();
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
             }
         ?>
-        <h3 class="mt-4">Welcome Admin : <?php echo $row['firstname']. ' ' . $row['lastname']?></h3>
+        <h3 class="mt-4">welcome : <?php echo $row['firstname']. ' ' . $row['lastname']?></h3>
        
         <a href="logout.php" class="btn btn-danger">Logout</a>
         <style>
@@ -48,6 +43,6 @@
     
 <body>
   
-
+    
 </body>
 </html>
